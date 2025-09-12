@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iron & Deco Mel - Todo en Bazar</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    body{overflow:auto;background:#f0f2f5;}
+    .map-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.25;filter:saturate(0.9) brightness(0.95);} 
+    .map-bg iframe{width:100%;height:100%;border:0}
+    .app{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));backdrop-filter:blur(4px);border-radius:10px;}
+    header{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    h1{margin:0;font-size:28px;letter-spacing:1px;color:#0a6fbd;}
+    .logo{height:70px;object-fit:contain}
+    p.subtitle{margin:0;opacity:0.8;font-size:14px}
+    .buttons{display:flex;gap:12px;margin:10px 0}
+    .btn-main{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s;text-decoration:none;display:inline-block}
+    .btn-main:hover{background:#095191}
+    .search-container{width:100%;max-width:500px;margin:12px 0;display:flex;justify-content:center}
+    .search-container input{width:100%;padding:10px 14px;border-radius:12px;border:1px solid #ccc;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.08);outline:none;transition:0.2s}
+    .search-container input:focus{border-color:#0a6fbd;box-shadow:0 4px 12px rgba(10,111,189,0.2);}
+    .products{width:100%;max-width:1100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;transition:all 0.3s ease}
+    .card{background:white;border-radius:16px;padding:14px;box-shadow:0 8px 22px rgba(0,0,0,0.08);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;align-items:center;gap:10px}
+    .card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.15)}
+    .img{width:100%;height:150px;object-fit:contain;border-radius:8px;transition:transform 0.2s}
+    .card:hover .img{transform:scale(1.05)}
+    .title{font-weight:700;text-align:center;color:#111}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:50;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s}
+    .overlay.show{visibility:visible;opacity:1}
+    .modal{background:white;padding:25px;border-radius:16px;max-width:420px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.25)}
+    .modal h2{margin:0 0 8px 0;font-size:24px;color:#0a6fbd}
+    .modal p{margin:8px 0;font-size:14px}
+    .actions{display:flex;gap:10px;justify-content:center;margin-top:16px}
+    .btn{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s}
+    .btn:hover{background:#095191}
+    .btn.secondary{background:#f3f4f6;color:#111;border:1px solid #ddd}
+    footer{margin-top:auto;padding:20px 0 10px;width:100%;max-width:1100px;text-align:center;opacity:0.85;font-size:13px}
+    @media (max-width:420px){h1{font-size:22px}.img{height:120px}}
+  </style>
+</head>
+<body>
+  <div class="map-bg" aria-hidden="true">
+    <iframe src="https://www.google.com/maps?q=Bell+Ville,+C%C3%B3rdoba,+Argentina&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="app">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img class="logo" src="https://i.postimg.cc/4NyTgDRM/LOGO-IRON-MEL.jpg" alt="Logo Iron & Deco Mel">
+        <h1>IRON & DECO MEL 🛍️✨</h1>
+      </div>
+      <div>
+        <p class="subtitle">TODO EN BAZAR · EN BELL VILLE</p>
+      </div>
+    </header>
+
+    <div class="buttons">
+      <a href="https://wa.me/543537552759" class="btn-main" target="_blank">WhatsApp Directo</a>
+      <a href="https://www.instagram.com/iron_y_deco_mel" class="btn-main" target="_blank">Instagram</a>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Busca tu producto..." onkeyup="buscarProducto()">
+    </div>
+
+    <main class="products" id="productsContainer" role="list"></main>
+
+    <footer>
+      ¡GRACIAS POR VISITAR <strong>IRON & DECO MEL</strong> EN BELL VILLE! ❤️ — Hacé click en un producto para ver un resumen y pedirlo por WhatsApp.
+    </footer>
+  </div>
+
+  <div id="overlay" class="overlay" role="dialog" aria-hidden="true">
+    <div class="modal" aria-modal="true">
+      <h2 id="modal-title">PRODUCTO</h2>
+      <p id="modal-desc">Descripción breve...</p>
+      <div class="actions">
+        <button id="wantBtn" class="btn" onclick="irWhatsapp()">LO QUIERO!</button>
+        <button class="btn secondary" onclick="cerrar()">CERRAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const whatsappNumber = '543537552759';
+
+    const productos = [
+      {nombre:'ARO DE LUZ', resumen:'Aro de luz para fotos, videos o streaming, ajustable y portátil.', img:'https://i.postimg.cc/76tTWvk4/ARO-DE-LUZ.jpg'},
+      {nombre:'ASTRONAUTA PROJECTOR DE GALAXIAS', resumen:'Proyector de estrellas y galaxias con diseño de astronauta.', img:'https://i.postimg.cc/0j3DrTWn/ASTRONAUTA-PROJECTOR-DE-GALAXIAS.jpg'},
+      {nombre:'AURICULARES F9', resumen:'Auriculares cómodos y con sonido de calidad, ideal para música.', img:'https://i.postimg.cc/26SZGkgT/AURICULARES-F9.jpg'},
+      {nombre:'AURICULARES TIPO VINCHA', resumen:'Auriculares con vincha ajustable, cómodos y portátiles.', img:'https://i.postimg.cc/s2ySB9ck/AURICULARES-TIPO-VINCHA.jpg'},
+      {nombre:'CANASTO PARA ROPA', resumen:'Canasto práctico para ropa sucia o almacenamiento de hogar.', img:'https://i.postimg.cc/HnJ7GSYy/CANASTO-PARA-ROPA.jpg'},
+      {nombre:'LINTERNA MANUAL SIN BATERÍAS', resumen:'Linterna recargable con manivela, útil para emergencias.', img:'https://i.postimg.cc/kgWKXhxN/LINTERNA-MANUAL-SIN-BATERIAS.jpg'},
+      {nombre:'PALA PARA PIZZAS', resumen:'Pala de madera resistente para preparar y servir pizzas.', img:'https://i.postimg.cc/ncjqNLrP/PALA-PARA-PIZZAS.jpg'},
+      {nombre:'PERCHEO ORGANIZADOR', resumen:'Perchero multifunción para ropa y accesorios.', img:'https://i.postimg.cc/Nf3Rtwrf/PERCHEO-ORGANIZADOR.jpg'},
+      {nombre:'SÁBANAS', resumen:'Juego de sábanas suaves y resistentes para cama.', img:'https://i.postimg.cc/QCRKjpCn/SABANAS.jpg'},
+      {nombre:'SECA PLATOS', resumen:'Secaplatos resistente y compacto para cocina.', img:'https://i.postimg.cc/YS3FQGDh/SECA-PLATOS.jpg'}
+    ];
+
+    const container = document.getElementById('productsContainer');
+
+    let productoSeleccionado = null;
+
+    function mostrarProductos(lista){
+      container.innerHTML = '';
+      lista.forEach(prod => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.tabIndex = 0;
+        card.onclick = () => mostrarFicha(prod);
+        card.innerHTML = `<img class='img' src='${prod.img}' alt='${prod.nombre}'><div class='title'>${prod.nombre}</div><div class='desc'>${prod.resumen}</div>`;
+        container.appendChild(card);
+      });
+    }
+
+    function mostrarFicha(prod){
+      document.getElementById('modal-title').textContent = prod.nombre.toUpperCase();
+      document.getElementById('modal-desc').textContent = prod.resumen;
+      document.getElementById('overlay').classList.add('show');
+      document.getElementById('overlay').setAttribute('aria-hidden','false');
+      productoSeleccionado = prod;
+    }
+
+    function cerrar(){
+      document.getElementById('overlay').classList.remove('show');
+      document.getElementById('overlay').setAttribute('aria-hidden','true');
+      productoSeleccionado = null;
+    }
+
+    function irWhatsapp(){
+      if(!productoSeleccionado) return;
+      const text = `Hola!+quiero+comprar:+${encodeURIComponent(productoSeleccionado.nombre)}`;
+      const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(url,'_blank');
+    }
+
+    function buscarProducto(){
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const resultados = productos.filter(p => p.nombre.toLowerCase().includes(query) || p.resumen.toLowerCase().includes(query));
+      mostrarProductos(resultados);
+    }
+
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') cerrar(); });
+
+    mostrarProductos(productos);
+  </script>
+</body>
+</html>
