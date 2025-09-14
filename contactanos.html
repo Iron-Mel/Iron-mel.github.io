@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Iron & Deco Mel | Contacto</title>
+  <meta name="description" content="Contacto con IRON & DECO MEL en Bell Ville, Córdoba. Encuentra nuestra ubicación, WhatsApp e Instagram.">
+  <link rel="icon" href="https://i.postimg.cc/4NyTgDRM/LOGO-IRON-MEL.jpg" type="image/jpg">
+
+  <style>
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    body{overflow:auto;background:#f0f2f5;}
+    .map-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.25;filter:saturate(0.9) brightness(0.95);} 
+    .map-bg iframe{width:100%;height:100%;border:0}
+    .app{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));backdrop-filter:blur(4px);border-radius:10px;}
+    header{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    h1{margin:0;font-size:28px;letter-spacing:1px;color:#0a6fbd;}
+    .logo{height:70px;object-fit:contain}
+    p.subtitle{margin:0;opacity:0.8;font-size:14px}
+    .contact-info{width:100%;max-width:700px;background:white;padding:20px;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,0.08);display:flex;flex-direction:column;gap:12px;text-align:center;}
+    .contact-info a{color:#0a6fbd;text-decoration:none;font-weight:700;}
+    .btn{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s;margin-top:12px;}
+    .btn:hover{background:#095191;}
+    footer{margin-top:auto;padding:20px 0 10px;width:100%;max-width:1100px;text-align:center;opacity:0.85;font-size:13px}
+    @media (max-width:420px){h1{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="map-bg" aria-hidden="true">
+    <iframe src="https://www.google.com/maps?q=Vélez+Sarsfield+822,+Bell+Ville,+Córdoba,+Argentina&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="app">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img class="logo" src="https://i.postimg.cc/4NyTgDRM/LOGO-IRON-MEL.jpg" alt="Logo Iron & Deco Mel">
+        <h1>IRON & DECO MEL </h1>
+      </div>
+      <div>
+        <p class="subtitle">CONTACTO · UBICACIÓN Y REDES</p>
+      </div>
+    </header>
+
+    <div class="contact-info">
+      <p>📍 Dirección: Vélez Sarsfield 822, Bell Ville, Córdoba</p>
+      <p>📱 WhatsApp: <a href="https://wa.me/543537552759" target="_blank">3537-552759</a></p>
+      <p>📸 Instagram: <a href="https://www.instagram.com/iron_y_deco_mel" target="_blank">@iron_y_deco_mel</a></p>
+      <button class="btn" onclick="window.location.href='index.html'">VOLVER AL CATÁLOGO</button>
+    </div>
+
+    <footer>
+      <strong>IRON-MEL</strong> ❤️ — Estaremos añadiendo mas cosas a la pagina, por productos que no estan en el catalogo consulte al Whatsapp 3537552759 o al Instagram Iron_y_deco_mel
+    </footer>
+  </div>
+</body>
+</html>
