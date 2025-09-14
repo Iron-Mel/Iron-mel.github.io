@@ -49,67 +49,7 @@
       "https://www.instagram.com/iron_y_deco_mel",
       "https://wa.me/543537552759"
     ],
-    "description": "Bazar, decoración, muebles industriales, braseros, banquetas, mesas, zapateros y más en Bell Ville, Córdoba.",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Productos IRON & DECO MEL",
-      "itemListElement": [
-        {
-          "@type": "Product",
-          "name": "Aro de Luz",
-          "image": "https://i.postimg.cc/76tTWvk4/ARO-DE-LUZ.jpg",
-          "description": "Aro de luz para fotos, videos o streaming, ajustable y portátil."
-        },
-        {
-          "@type": "Product",
-          "name": "Astronauta Projector de Galaxias",
-          "image": "https://i.postimg.cc/0j3DrTWn/ASTRONAUTA-PROJECTOR-DE-GALAXIAS.jpg",
-          "description": "Proyector de estrellas y galaxias con diseño de astronauta."
-        },
-        {
-          "@type": "Product",
-          "name": "Auriculares F9",
-          "image": "https://i.postimg.cc/26SZGkgT/AURICULARES-F9.jpg",
-          "description": "Auriculares cómodos y con sonido de calidad, ideal para música."
-        },
-        {
-          "@type": "Product",
-          "name": "Auriculares tipo vincha",
-          "image": "https://i.postimg.cc/s2ySB9ck/AURICULARES-TIPO-VINCHA.jpg",
-          "description": "Auriculares con vincha ajustable, cómodos y portátiles."
-        },
-        {
-          "@type": "Product",
-          "name": "Linterna manual sin baterías",
-          "image": "https://i.postimg.cc/kgWKXhxN/LINTERNA-MANUAL-SIN-BATERIAS.jpg",
-          "description": "Linterna recargable con manivela, útil para emergencias."
-        },
-        {
-          "@type": "Product",
-          "name": "Perchero organizador",
-          "image": "https://i.postimg.cc/Nf3Rtwrf/PERCHEO-ORGANIZADOR.jpg",
-          "description": "Perchero multifunción para ropa y accesorios."
-        },
-        {
-          "@type": "Product",
-          "name": "Secaplatos",
-          "image": "https://i.postimg.cc/YS3FQGDh/SECA-PLATOS.jpg",
-          "description": "Secaplatos resistente y compacto para cocina."
-        },
-        {
-          "@type": "Product",
-          "name": "Estante organizador para baño",
-          "image": "https://i.postimg.cc/PqHNrvpV/ESTANTE-ORGANIZADOR-PARA-BA-O.jpg",
-          "description": "Estante funcional y moderno para organizar tu baño."
-        },
-        {
-          "@type": "Product",
-          "name": "Soporte fijo para TV",
-          "image": "https://i.postimg.cc/MGYHcZ16/SOPORTE-FIJO-PARA-TV-DESDE-26-A-63-PULGADAS.jpg",
-          "description": "Soporte resistente para TVs de 26 a 63 pulgadas."
-        }
-      ]
-    }
+    "description": "Bazar, decoración, muebles industriales, braseros, banquetas, mesas, zapateros y más en Bell Ville, Córdoba."
   }
   </script>
 
@@ -124,9 +64,7 @@
     h1{margin:0;font-size:28px;letter-spacing:1px;color:#0a6fbd;}
     .logo{height:70px;object-fit:contain}
     p.subtitle{margin:0;opacity:0.8;font-size:14px}
-    .buttons{display:flex;gap:12px;margin:10px 0}
-    .btn-main{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s;text-decoration:none;display:inline-block}
-    .btn-main:hover{background:#095191}
+    .button-container{display:flex;gap:12px;justify-content:center;margin-bottom:12px;}
     .search-container{width:100%;max-width:500px;margin:12px 0;display:flex;justify-content:center}
     .search-container input{width:100%;padding:10px 14px;border-radius:12px;border:1px solid #ccc;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.08);outline:none;transition:0.2s}
     .search-container input:focus{border-color:#0a6fbd;box-shadow:0 4px 12px rgba(10,111,189,0.2);}
@@ -142,55 +80,10 @@
     .modal h2{margin:0 0 8px 0;font-size:24px;color:#0a6fbd}
     .modal p{margin:8px 0;font-size:14px}
     .actions{display:flex;gap:10px;justify-content:center;margin-top:16px}
-    .btn{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s}
+    .btn{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s;text-decoration:none;text-align:center;}
     .btn:hover{background:#095191}
     .btn.secondary{background:#f3f4f6;color:#111;border:1px solid #ddd}
     footer{margin-top:auto;padding:20px 0 10px;width:100%;max-width:1100px;text-align:center;opacity:0.85;font-size:13px}
-    .section-title{font-size:24px;font-weight:700;color:#0a6fbd;margin:40px 0 20px;text-align:center;}
-    .section-container{width:100%;max-width:1100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;justify-items:center;margin-bottom:40px;}
-    .section-container img{width:100%;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,0.1)}
-    @media (max-width:420px){h1{font-size:22px}.img{height:120px}}
-  </style>
-</head>
-<body>
-    <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Iron & Deco Mel - Todo en Bazar</title>
-  <style>
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
-    body{overflow:auto;background:#f0f2f5;}
-    .map-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.25;filter:saturate(0.9) brightness(0.95);} 
-    .map-bg iframe{width:100%;height:100%;border:0}
-    .app{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));backdrop-filter:blur(4px);border-radius:10px;}
-    header{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    h1{margin:0;font-size:28px;letter-spacing:1px;color:#0a6fbd;}
-    .logo{height:70px;object-fit:contain}
-    p.subtitle{margin:0;opacity:0.8;font-size:14px}
-    .buttons{display:flex;gap:12px;margin:10px 0}
-    .btn-main{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s;text-decoration:none;display:inline-block}
-    .btn-main:hover{background:#095191}
-    .search-container{width:100%;max-width:500px;margin:12px 0;display:flex;justify-content:center}
-    .search-container input{width:100%;padding:10px 14px;border-radius:12px;border:1px solid #ccc;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.08);outline:none;transition:0.2s}
-    .search-container input:focus{border-color:#0a6fbd;box-shadow:0 4px 12px rgba(10,111,189,0.2);}
-    .products{width:100%;max-width:1100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;transition:all 0.3s ease}
-    .card{background:white;border-radius:16px;padding:14px;box-shadow:0 8px 22px rgba(0,0,0,0.08);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;align-items:center;gap:10px}
-    .card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.15)}
-    .img{width:100%;height:150px;object-fit:contain;border-radius:8px;transition:transform 0.2s}
-    .card:hover .img{transform:scale(1.05)}
-    .title{font-weight:700;text-align:center;color:#111}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:50;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s}
-    .overlay.show{visibility:visible;opacity:1}
-    .modal{background:white;padding:25px;border-radius:16px;max-width:420px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.25)}
-    .modal h2{margin:0 0 8px 0;font-size:24px;color:#0a6fbd}
-    .modal p{margin:8px 0;font-size:14px}
-    .actions{display:flex;gap:10px;justify-content:center;margin-top:16px}
-    .btn{background:#0a6fbd;color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:0.2s}
-    .btn:hover{background:#095191}
-    .btn.secondary{background:#f3f4f6;color:#111;border:1px solid #ddd}
-    footer{margin-top:auto;padding:20px 0 10px;width:100%;max-width:1100px;text-align:center;opacity:0.85;font-size:13px}
-    .section-title{font-size:24px;font-weight:700;color:#0a6fbd;margin:40px 0 20px;text-align:center;}
-    .section-container{width:100%;max-width:1100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;justify-items:center;margin-bottom:40px;}
-    .section-container img{width:100%;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,0.1)}
     @media (max-width:420px){h1{font-size:22px}.img{height:120px}}
   </style>
 </head>
@@ -210,9 +103,10 @@
       </div>
     </header>
 
-    <div class="buttons">
-      <a href="https://wa.me/543537552759" class="btn-main" target="_blank">WhatsApp Directo</a>
-      <a href="https://www.instagram.com/iron_y_deco_mel" class="btn-main" target="_blank">Instagram</a>
+    <!-- BOTONES NUEVOS -->
+    <div class="button-container">
+      <a href="Quienes Somos.html" class="btn">QUIENES SOMOS</a>
+      <a href="contactanos.html" class="btn">CONTÁCTANOS</a>
     </div>
 
     <div class="search-container">
@@ -220,32 +114,6 @@
     </div>
 
     <main class="products" id="productsContainer" role="list"></main>
-
-    <!-- NUEVO APARTADO CLIENTES -->
-    <h2 class="section-title">Clientes</h2>
-    <div class="section-container">
-      <div>
-        <img src="https://i.postimg.cc/RVjNyDMB/CLIENTE-GUIRNALDA-GRACIAS.jpg" alt="Cliente Maxikiosco Bowling">
-        <p style="text-align:center;margin-top:8px;">Maxikiosco Bowling </p>
-      </div>
-      <div>
-        <img src="https://i.postimg.cc/6pnyXf3G/CLIENTE-GUIRNALDAS-GRACIAS.jpg" alt="Cliente Carniceria">
-        <p style="text-align:center;margin-top:8px;">Carniceria la esquina</p>
-      </div>
-    </div>
-
-    <!-- NUEVO APARTADO TRABAJOS REALIZADOS -->
-    <h2 class="section-title">Trabajos Realizados</h2>
-    <div class="section-container">
-      <div><img src="https://i.postimg.cc/BbzXqhH2/TRABAJO-BANQUETA-ESTILO-INDUSTRIAL.jpg" alt="Banqueta estilo industrial"><p style="text-align:center;margin-top:8px;">Banqueta estilo industrial</p></div>
-      <div><img src="https://i.postimg.cc/GhB4MCnK/TRABAJO-BRAZERO.jpg" alt="Brazero"><p style="text-align:center;margin-top:8px;">Brazero</p></div>
-      <div><img src="https://i.postimg.cc/Z5dyqhfn/TRABAJO-BRAZERO-PALA-Y-ATIZADOR.jpg" alt="Brazero con pala y atizador"><p style="text-align:center;margin-top:8px;">Brazero con pala y atizador</p></div>
-      <div><img src="https://i.postimg.cc/Y9bvP2Sn/TRABAJO-CANASTOS-DE-BASURA.jpg" alt="Canastos de basura"><p style="text-align:center;margin-top:8px;">Canastos de basura</p></div>
-      <div><img src="https://i.postimg.cc/kGG2Pr6n/TRABAJO-MESA-ESTILO-INDUSTRIAL.jpg" alt="Mesa estilo industrial"><p style="text-align:center;margin-top:8px;">Mesa estilo industrial</p></div>
-      <div><img src="https://i.postimg.cc/zfYHbPMj/TRABAJO-MESA-RATONA.jpg" alt="Mesa ratona"><p style="text-align:center;margin-top:8px;">Mesa ratona</p></div>
-      <div><img src="https://i.postimg.cc/nzHsT9n9/TRABAJO-MINI-BAR-ESTILO-INDUSTRIAL.jpg" alt="Mini bar estilo industrial"><p style="text-align:center;margin-top:8px;">Mini bar estilo industrial</p></div>
-      <div><img src="https://i.postimg.cc/q7ch8xHd/TRABAJO-PORTA-LE-A.jpg" alt="Porta leña"><p style="text-align:center;margin-top:8px;">Porta leña</p></div>
-    </div>
 
     <footer>
       <strong>IRON-MEL</strong>  ❤️ — Estaremos añadiendo mas cosas a la pagina, por productos que no estan en el catalogo consulte al Whatsapp 3537552759 o al instagram Iron_y_deco_mel
@@ -274,9 +142,14 @@
       {nombre:'LINTERNA MANUAL SIN BATERÍAS', resumen:'Linterna recargable con manivela, útil para emergencias.', img:'https://i.postimg.cc/kgWKXhxN/LINTERNA-MANUAL-SIN-BATERIAS.jpg'},
       {nombre:'PERCHEO ORGANIZADOR', resumen:'Perchero multifunción para ropa y accesorios.', img:'https://i.postimg.cc/Nf3Rtwrf/PERCHEO-ORGANIZADOR.jpg'},
       {nombre:'SECAPLATOS', resumen:'Secaplatos resistente y compacto para cocina.', img:'https://i.postimg.cc/YS3FQGDh/SECA-PLATOS.jpg'},
-      // DOS PRODUCTOS LOCOS NUEVOS
       {nombre:'ESTANTE ORGANIZADOR PARA BAÑO', resumen:'Estante funcional y moderno para organizar tu baño. Queda súper bueno para ahorrar espacio y aprovechar del mismo.', img:'https://i.postimg.cc/PqHNrvpV/ESTANTE-ORGANIZADOR-PARA-BA-O.jpg'},
-      {nombre:'SOPORTE FIJO PARA TV', resumen:'Soporte resistente para TVs desde 26 pulgadas hasta 63 pulgadas. Por más modelos de soportes, averigue.', img:'https://i.postimg.cc/MGYHcZ16/SOPORTE-FIJO-PARA-TV-DESDE-26-A-63-PULGADAS.jpg'}
+      {nombre:'SOPORTE FIJO PARA TV', resumen:'Soporte resistente para TVs desde 26 pulgadas hasta 63 pulgadas. Por más modelos de soportes, averigue.', img:'https://i.postimg.cc/MGYHcZ16/SOPORTE-FIJO-PARA-TV-DESDE-26-A-63-PULGADAS.jpg'},
+      {nombre:'CARGADORES USB TRES SALIDAS', resumen:'Cargador USB con tres salidas, rápido y seguro para tus dispositivos.', img:'https://i.postimg.cc/cLPDGBwK/CARGADORES-USB-TRES-SALIDAS.jpg'},
+      {nombre:'LÁMPARA LED RECARGABLE TÁCTIL', resumen:'Lampara LED multimodo FRIO/CALOR con 3 niveles de intensidad, incluye luz LED FRIA, luz LED CALIDA.', img:'https://i.postimg.cc/cHSXr1D0/LAMPARA-LED-RECARGABLE-TACTIL.jpg'},
+      {nombre:'REPITIDOR DE WIFI', resumen:'Mejora la señal de tu WiFi y elimina zonas de poca cobertura en tu casa!.', img:'https://i.postimg.cc/3wpt80Ft/REPITIDOR-DE-WIFI.jpg'},
+      {nombre:'SOPORTE PARA AUTO MARCA GADNIC', resumen:'Soporte universal para auto, fácil de instalar y muy seguro.', img:'https://i.postimg.cc/nhXdWPjb/SOPORTE-PARA-AUTO-MARCA-GADNIC.jpg'},
+      {nombre:'TIRAS LED (5,10,15 METROS)', resumen:'Tiras LED decorativas, flexibles y con colores ajustables para tus espacios, tambien tenemos disponibles tiras led que se conectan a USB!.', img:'https://i.postimg.cc/65jjYXQf/TIRAS-LED.jpg'},
+      {nombre:'GUIRNALDAS VINTAGE (STOCK PERMANENTE TODO EL AÑO)', resumen:'Guirnaldas vintage aptas para exterior e interior, lámparas cada 1 metro, luces cálidas y luces frías. Disponibles en 5, 10, 15 y 20 metros.', img:'https://i.postimg.cc/2ynSwDhk/GUIRNALDAS-VINTAGE.jpg'}
     ];
 
     const container = document.getElementById('productsContainer');
